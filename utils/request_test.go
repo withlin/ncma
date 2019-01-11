@@ -1,13 +1,17 @@
 package utils
 
 import (
+	"fmt"
+	assert2 "github.com/stretchr/testify/assert"
 	"log"
 	"testing"
 )
 
 func TestDoRequest(t *testing.T){
-	param :=`{"id":"72029984","csrf_token":""}`
-	params, encSecKey, encErr := Encrypt(param)
+	assert :=assert2.New(t)
+
+	pa :=  fmt.Sprintf(`{"id":"%s","csrf_token":""}`,"72029984")
+	params, encSecKey, encErr := Encrypt(pa)
 	if encErr != nil {
 		log.Println(encErr)
 	}
@@ -15,5 +19,6 @@ func TestDoRequest(t *testing.T){
 	if resErr != nil {
 		log.Println(resErr)
 	}
-	log.Println(res)
+	assert.Equal(2836,len(res))
+
 }

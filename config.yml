@@ -3,5 +3,5 @@ go:
   port: 7777
   tokenmaxage: 10800
   env: development
-  logdir: 
+  logdir: ncma
   tokensecret: AstrRAflaEAA
