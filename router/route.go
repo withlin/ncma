@@ -5,6 +5,7 @@ import (
 	"github.com/WithLin/ncma/controller/album"
 	"github.com/WithLin/ncma/controller/login"
 	"github.com/WithLin/ncma/controller/user"
+	"github.com/WithLin/ncma/controller/video"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,12 +17,14 @@ func Route(router *gin.Engine) {
 	{
 		//album
 		api.GET("/album/:id",album.Album)
-		api.GET("/login/cellphone/",login.LoginCellPhone)
+
 		//login
+		api.GET("/login/cellphone/",login.LoginCellPhone)
 		api.GET("/login/",login.LoginEmail)
 		api.GET("/login/refresh",login.LoginRefresh)
 		api.GET("/login/status",login.LoginStatus)
 		api.GET("/logout",login.LogOut)
+
 		//User
 		api.GET("/user/detail",user.UserDetail)
 		api.GET("/user/subcount",user.UserSubCount)
@@ -37,7 +40,11 @@ func Route(router *gin.Engine) {
 		api.GET("/user/playlist",user.UserPlayList)
 
 		//video
+		api.GET("/video/detail",video.VedioDetail)
+		api.GET("/video/sub",video.VedioSub)
+		api.GET("/video/url",video.VedioUrl)
 
+		//artist
 
 	}
 }
