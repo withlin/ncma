@@ -13,9 +13,9 @@ func Album(c *gin.Context) {
 	if encErr != nil {
 		log.Println(encErr)
 	}
-	res, resErr := utils.DoRequest("http://music.163.com/weapi/v1/album/"+id, params, encSecKey)
+	res, resErr := utils.DoPostRequest(c.Request.Cookies(),"http://music.163.com/weapi/v1/album/"+id, params, encSecKey)
 	if resErr != nil {
 		log.Println(resErr)
 	}
-	c.String(200, `{"code":200,"album":%s}`,res)
+	c.String(200,res)
 }

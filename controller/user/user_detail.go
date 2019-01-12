@@ -1,4 +1,4 @@
-package login
+package user
 
 import (
 	"fmt"
@@ -7,15 +7,15 @@ import (
 	"log"
 )
 
-func Login(c *gin.Context) {
-	id := c.Param("id")
+func UserDetail(c *gin.Context) {
+	id := c.Query("uid")
 	params, encSecKey, encErr := utils.Encrypt(fmt.Sprintf(`{"id":"%s","csrf_token":""}`, id))
 	if encErr != nil {
 		log.Println(encErr)
 	}
-	res, resErr := utils.DoRequest("http://music.163.com/weapi/v1/album/"+id, params, encSecKey)
+	res, resErr := utils.DoPostRequest(c.Request.Cookies(),"https://music.163.com/weapi/v1/user/detail/"+id, params, encSecKey)
 	if resErr != nil {
 		log.Println(resErr)
 	}
-	c.String(200, `{"code":200,"album":%s}`,res)
+	c.String(200,res)
 }

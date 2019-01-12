@@ -15,9 +15,10 @@ func LoginCellPhone(c *gin.Context) {
 	if encErr != nil {
 		log.Println(encErr)
 	}
-	res, resErr := utils.DoRequest("https://music.163.com/weapi/login/cellphone", params, encSecKey)
+
+	res, resErr := utils.DoPostRequest(c.Request.Cookies(),"https://music.163.com/weapi/login/cellphone", params, encSecKey)
 	if resErr != nil {
 		log.Println(resErr)
 	}
-	c.String(200, `{"code":200,"album":%s}`,res)
+	c.String(200, res)
 }
