@@ -25,5 +25,19 @@ func Route(router *gin.Engine) {
 		//User
 		api.GET("/user/detail",user.UserDetail)
 		api.GET("/user/subcount",user.UserSubCount)
+		api.GET("/user/audio",user.UserAudio)
+		api.GET("/user/cloud",user.UserCloud)
+		api.GET("/user/cloudsearch",user.UserCloudSearch)
+		api.GET("/user/dj",user.UserDj)
+		api.GET("/user/event",user.UserEvent)
+		api.GET("/user/followeds",user.UserFolloweds)
+		api.GET("/user/follows",user.UserFollows)
+		api.GET("/user/record",user.UserRecord)
+		api.GET("/user/update",user.UserUpdate)
+		api.GET("/user/playlist",user.UserPlayList)
+
+		//video
+
+
 	}
 }
