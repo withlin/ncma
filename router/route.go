@@ -3,6 +3,7 @@ package router
 import (
 	"github.com/WithLin/ncma/config"
 	"github.com/WithLin/ncma/controller/album"
+	"github.com/WithLin/ncma/controller/artist"
 	"github.com/WithLin/ncma/controller/login"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
@@ -45,6 +46,12 @@ func Route(router *gin.Engine) {
 		api.GET("/video/url",video.VedioUrl)
 
 		//artist
-
+		api.GET("/artist/mv",artist.ArtistMv)
+		api.GET("/artist/album",artist.ArtistAlbum)
+		api.GET("/artist",artist.Artist)
+		api.GET("/artist/list",artist.ArtistList)
+		api.GET("/artist/sub",artist.ArtistSub)
+		api.GET("/artist/sublist",artist.ArtistSubList)
+		api.GET("/artists",artist.Artists)
 	}
 }
