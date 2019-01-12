@@ -1,6 +1,6 @@
 go:
-  apiprefix: /v1/api
-  port: 7777
+  apiprefix:
+  port: 3000
   tokenmaxage: 10800
   env: development
   logdir: ncma
