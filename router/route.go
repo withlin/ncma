@@ -4,7 +4,10 @@ import (
 	"github.com/WithLin/ncma/config"
 	"github.com/WithLin/ncma/controller/album"
 	"github.com/WithLin/ncma/controller/artist"
+	"github.com/WithLin/ncma/controller/comment"
+	"github.com/WithLin/ncma/controller/dj"
 	"github.com/WithLin/ncma/controller/login"
+	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
 	"github.com/gin-gonic/gin"
@@ -53,5 +56,33 @@ func Route(router *gin.Engine) {
 		api.GET("/artist/sub",artist.ArtistSub)
 		api.GET("/artist/sublist",artist.ArtistSubList)
 		api.GET("/artists",artist.Artists)
+
+		//Comment
+		api.GET("/comment/album",comment.CommentAlbum)
+		api.GET("/comment/dj",comment.CommentDj)
+		api.GET("/comment/hot",comment.CommentHot)
+		api.GET("/comment/like",comment.CommentLike)
+		api.GET("/comment/music",comment.CommentMusic)
+		api.GET("/comment/mv",comment.CommentMV)
+		api.GET("/comment/playlist",comment.CommentPlayList)
+		api.GET("/comment/video",comment.CommentVidio)
+		api.GET("/comment",comment.Comment)
+
+		//signin
+		api.GET("/daily_signin",signin.DailySignin)
+
+		//dj
+		api.GET("/dj/recommend",dj.DjRecommend)
+		api.GET("/dj/catelist",dj.DjCatelist)
+		api.GET("/dj/recommend/type",dj.DjRecommendType)
+		api.GET("/dj/sub",dj.DjSub)
+		api.GET("/dj/sublist",dj.DjSublist)
+		api.GET("/dj/paygift",dj.DjPayGift)
+		api.GET("/dj/detail",dj.DjDetail)
+		api.GET("/dj/program",dj.DjProgram)
+		api.GET("/dj/program/detail",dj.DjProgramDetail)
+		api.GET("/dj/host",dj.DjHost)
+
+
 	}
 }
