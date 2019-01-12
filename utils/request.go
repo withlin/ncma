@@ -2,6 +2,7 @@ package utils
 
 import (
 	"io/ioutil"
+	"log"
 	"math/rand"
 	"net/http"
 	"net/url"
@@ -39,6 +40,7 @@ func DoRequest(address, params, encSecKey string)(string ,error){
 	body := strings.NewReader(result.Encode())
 	client := &http.Client{}
 	request, _ := http.NewRequest("POST", address, body)
+	log.Println(request.Cookies())
 	request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	request.Header.Set("Referer", "http://music.163.com")
 	request.Header.Set("Accept", "*/*")

@@ -3,6 +3,7 @@ package router
 import (
 	"github.com/WithLin/ncma/config"
 	"github.com/WithLin/ncma/controller/album"
+	"github.com/WithLin/ncma/controller/login"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,5 +14,6 @@ func Route(router *gin.Engine) {
 	api := router.Group(apiPrefix)
 	{
 		api.GET("/album/:id",album.Album)
+		api.GET("/login/cellphone/",login.LoginCellPhone)
 	}
 }
