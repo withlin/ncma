@@ -6,6 +6,9 @@ import (
 	"github.com/WithLin/ncma/controller/artist"
 	"github.com/WithLin/ncma/controller/comment"
 	"github.com/WithLin/ncma/controller/dj"
+	"github.com/WithLin/ncma/controller/event"
+	"github.com/WithLin/ncma/controller/fm"
+	"github.com/WithLin/ncma/controller/follow"
 	"github.com/WithLin/ncma/controller/login"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
@@ -82,6 +85,16 @@ func Route(router *gin.Engine) {
 		api.GET("/dj/program",dj.DjProgram)
 		api.GET("/dj/program/detail",dj.DjProgramDetail)
 		api.GET("/dj/host",dj.DjHost)
+
+		//event
+		api.GET("/event",event.Event)
+
+		//FmTrash
+		api.GET("/fm_trash",fm.FmTrash)
+
+		//follow
+		api.GET("/follow",follow.Follow)
+
 
 
 	}
