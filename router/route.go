@@ -11,6 +11,8 @@ import (
 	"github.com/WithLin/ncma/controller/follow"
 	"github.com/WithLin/ncma/controller/like"
 	"github.com/WithLin/ncma/controller/login"
+	"github.com/WithLin/ncma/controller/lyric"
+	"github.com/WithLin/ncma/controller/mv"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
@@ -99,6 +101,16 @@ func Route(router *gin.Engine) {
 		//like
 		api.GET("/like",like.Like)
 		api.GET("/likelist",like.LikeList)
+
+		//Lyric
+		api.GET("/lyric",lyric.Lyric)
+
+		//mv
+		api.GET("/mv/detail",mv.MvDetail)
+		api.GET("/mv/url",mv.MvUrl)
+		api.GET("/mv/sub",mv.MvSub)
+		api.GET("/mv/sublist",mv.MvList)
+		api.GET("/mv/fist",mv.MvFist)
 
 
 
