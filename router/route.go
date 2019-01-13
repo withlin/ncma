@@ -9,6 +9,7 @@ import (
 	"github.com/WithLin/ncma/controller/event"
 	"github.com/WithLin/ncma/controller/fm"
 	"github.com/WithLin/ncma/controller/follow"
+	"github.com/WithLin/ncma/controller/like"
 	"github.com/WithLin/ncma/controller/login"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
@@ -94,6 +95,10 @@ func Route(router *gin.Engine) {
 
 		//follow
 		api.GET("/follow",follow.Follow)
+
+		//like
+		api.GET("/like",like.Like)
+		api.GET("/likelist",like.LikeList)
 
 
 
