@@ -19,6 +19,7 @@ import (
 	"github.com/WithLin/ncma/controller/send"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/simi"
+	"github.com/WithLin/ncma/controller/song"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
 	"github.com/gin-gonic/gin"
@@ -157,6 +158,11 @@ func Route(router *gin.Engine) {
 		api.GET("/simi/mv",simi.SimiMV)
 		api.GET("/simi/song",simi.SimiSong)
 		api.GET("/simi/user",simi.SimiUser)
+
+		//song
+		api.GET("/song/detail",song.SongDetail)
+		api.GET("/song/url",song.SongUrl)
+
 
 
 
