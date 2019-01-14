@@ -1,7 +1,6 @@
 package router
 
 import (
-	"github.com/WithLin/ncma/config"
 	"github.com/WithLin/ncma/controller/album"
 	"github.com/WithLin/ncma/controller/artist"
 	"github.com/WithLin/ncma/controller/comment"
@@ -15,6 +14,7 @@ import (
 	"github.com/WithLin/ncma/controller/mv"
 	"github.com/WithLin/ncma/controller/personal"
 	"github.com/WithLin/ncma/controller/playlist"
+	"github.com/WithLin/ncma/controller/recommend"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
@@ -132,6 +132,10 @@ func Route(router *gin.Engine) {
 		api.GET("/playlist/tracks",playlist.PlayListTracks)
 
 
+		//
+		api.GET("/recommend/source",recommend.RecommendResource)
+		api.GET("/recommend/songs",recommend.RecommendSongs)
+		api.GET("/program/recommend",recommend.ProgramRecommend)
 
 
 
