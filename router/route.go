@@ -14,6 +14,7 @@ import (
 	"github.com/WithLin/ncma/controller/lyric"
 	"github.com/WithLin/ncma/controller/mv"
 	"github.com/WithLin/ncma/controller/personal"
+	"github.com/WithLin/ncma/controller/playlist"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
@@ -120,6 +121,16 @@ func Route(router *gin.Engine) {
 		api.GET("/personalized/djprogram",personal.PersonalizedDjprogram)
 		api.GET("/personalized/privatecontent",personal.PersonalizedPrivatecontent)
 		api.GET("/personalized",personal.Personalized)
+
+		//PlayList
+		api.GET("/playlist/update",playlist.PlayListUpdate)
+		api.GET("/playlist/catlist",playlist.PlayListCatlist)
+		api.GET("/playlist/hot",playlist.PlayListHot)
+		api.GET("/playlist/detail",playlist.PlayListDetail)
+		api.GET("/playlist/create",playlist.PlayListCreate)
+		api.GET("/playlist/subscribe",playlist.PlayListSubscribe)
+		api.GET("/playlist/tracks",playlist.PlayListTracks)
+
 
 
 
