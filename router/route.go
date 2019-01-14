@@ -1,6 +1,7 @@
 package router
 
 import (
+	"github.com/WithLin/ncma/config"
 	"github.com/WithLin/ncma/controller/album"
 	"github.com/WithLin/ncma/controller/artist"
 	"github.com/WithLin/ncma/controller/comment"
@@ -20,6 +21,7 @@ import (
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/simi"
 	"github.com/WithLin/ncma/controller/song"
+	"github.com/WithLin/ncma/controller/top"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
 	"github.com/gin-gonic/gin"
@@ -162,6 +164,18 @@ func Route(router *gin.Engine) {
 		//song
 		api.GET("/song/detail",song.SongDetail)
 		api.GET("/song/url",song.SongUrl)
+
+		//top
+		api.GET("/top/playlist",top.TopPlayList)
+		api.GET("/top/playlist/highquality",top.TopPlayListHighQuality)
+		api.GET("/top/album",top.TopAlbum)
+		api.GET("/top/artists",top.TopArtists)
+		api.GET("/top/mv",top.TopMv)
+		api.GET("/top/song",top.TopSong)
+		api.GET("/toplist",top.TopList)
+		api.GET("/toplist/artist",top.TopListArtist)
+		api.GET("/toplist/detail",top.TopListDetail)
+		api.GET("/top/list",top.TopArray)
 
 
 
