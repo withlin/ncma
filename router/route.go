@@ -4,6 +4,8 @@ import (
 	"github.com/WithLin/ncma/config"
 	"github.com/WithLin/ncma/controller/album"
 	"github.com/WithLin/ncma/controller/artist"
+	"github.com/WithLin/ncma/controller/banner"
+	"github.com/WithLin/ncma/controller/check"
 	"github.com/WithLin/ncma/controller/comment"
 	"github.com/WithLin/ncma/controller/dj"
 	"github.com/WithLin/ncma/controller/event"
@@ -177,6 +179,11 @@ func Route(router *gin.Engine) {
 		api.GET("/toplist/detail",top.TopListDetail)
 		api.GET("/top/list",top.TopArray)
 
+		//Banner
+		api.GET("/banner",banner.Banner)
+
+		//check music
+		api.GET("/check/music",check.CheckMusic)
 
 
 
