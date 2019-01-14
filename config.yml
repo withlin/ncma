@@ -3,5 +3,5 @@ go:
   port: 3000
   tokenmaxage: 10800
   env: development
-  logdir: ncma
+  logdir: ncma.log
   tokensecret: AstrRAflaEAA
