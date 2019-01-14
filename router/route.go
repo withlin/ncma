@@ -15,6 +15,7 @@ import (
 	"github.com/WithLin/ncma/controller/personal"
 	"github.com/WithLin/ncma/controller/playlist"
 	"github.com/WithLin/ncma/controller/recommend"
+	"github.com/WithLin/ncma/controller/search"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
@@ -132,10 +133,16 @@ func Route(router *gin.Engine) {
 		api.GET("/playlist/tracks",playlist.PlayListTracks)
 
 
-		//
+		//recommend
 		api.GET("/recommend/source",recommend.RecommendResource)
 		api.GET("/recommend/songs",recommend.RecommendSongs)
 		api.GET("/program/recommend",recommend.ProgramRecommend)
+
+		//search
+		api.GET("/search",search.Search)
+		api.GET("/search/suggest",search.SearchSuggest)
+		api.GET("/search/multimatch",search.SearchMultiMatch)
+		api.GET("/search/hot",search.SearchHot)
 
 
 

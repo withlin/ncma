@@ -45,7 +45,7 @@ func RecommendResource(c *gin.Context) {
 func RecommendSongs(c *gin.Context){
 
 	limit :=c.DefaultQuery("limit","20")
-	offset :=c.DefaultQuery("limit","0")
+	offset :=c.DefaultQuery("offset","0")
 
 	params, encSecKey, encErr := utils.Encrypt(fmt.Sprintf(`{"limit":%s,"offset":%s,"total":true,"csrf_token":""}`,
 		limit,offset))
