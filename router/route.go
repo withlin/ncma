@@ -13,6 +13,7 @@ import (
 	"github.com/WithLin/ncma/controller/login"
 	"github.com/WithLin/ncma/controller/lyric"
 	"github.com/WithLin/ncma/controller/mv"
+	"github.com/WithLin/ncma/controller/personal"
 	"github.com/WithLin/ncma/controller/signin"
 	"github.com/WithLin/ncma/controller/user"
 	"github.com/WithLin/ncma/controller/video"
@@ -111,6 +112,16 @@ func Route(router *gin.Engine) {
 		api.GET("/mv/sub",mv.MvSub)
 		api.GET("/mv/sublist",mv.MvList)
 		api.GET("/mv/fist",mv.MvFist)
+
+		//Personal
+		api.GET("/personal_fm",personal.PersonalFm)
+		api.GET("/personalized/mv",personal.PersonalizedMv)
+		api.GET("/personalized/newsong",personal.PersonalizedNewsong)
+		api.GET("/personalized/djprogram",personal.PersonalizedDjprogram)
+		api.GET("/personalized/privatecontent",personal.PersonalizedPrivatecontent)
+		api.GET("/personalized",personal.Personalized)
+
+
 
 
 
